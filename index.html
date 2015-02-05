@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+         <!--игнорировать режим совместимости-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--условный комментарий-->
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->        
+        <title>Noveo CSS</title>  
+        <style type="text/css">
+           @import url("styles.css");
+           html{
+               background-color: grey;
+           }
+           body{
+                min-width: 800px;
+                max-width: 1024px;
+                margin: 10px auto;
+                background-color: white;              
+          
+            }
+            header{
+                 background: url("images/logo.jpg") no-repeat;
+                 height: 120px;
+                 position: relative;
+                 background-position: 20px top;
+                 border-bottom: 2px solid gray;
+                                  
+            }
+            header nav{
+                position: absolute;
+                left: 20px;
+                top: 90px;
+                width: 100%;
+                
+            }
+            nav ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                margin-bottom: 10px;
+                text-align: left;
+            }
+            nav li{
+                display: inline;   
+            }
+            nav a{
+                display: inline-block;
+                width: 150px;
+                text-decoration: none;
+                text-transform: uppercase;                
+                border:1px solid black;
+                border-top: 1px dashed black;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 5px 5px 1px rgba(0,0,0,.60); 
+                color: black;
+                background: url("images/nav.png") no-repeat;
+                text-align: center;
+                
+            }
+            nav a:hover{
+                text-shadow: 0 0 black;
+                background-position:0 center;
+                
+            }
+            nav a:active{
+                box-shadow: 3px 3px 1px rgba(0,0,0,.60);   
+                transform: translate(1px,1px);
+              }
+            figure{
+                  position: relative;
+                  margin-left: 2%;
+                  margin-bottom: 0.5em;
+                  margin-top: 0.5em;
+              }
+              header+section figure{
+                  margin-bottom: 0em;
+                  margin-top: 0em;
+              }
+              section figure:first-of-type{
+                  margin-left: 0px;
+              }
+              
+              .gellary3 figure:nth-child(4n+1){
+                  margin-left: 0px;
+              }  
+            strong{
+                font-weight: bold;
+            }
+            p:first-line{
+                font-weight: bold;
+              }  
+            img{
+                  width: 100%;
+            }
+            
+            h1{
+                font-size: large;
+                font-weight: bold;
+                padding: 0.5em;
+            }
+            
+            figcaption{
+                padding: 1em;
+            }
+            
+            .gellary figcaption{
+                padding: 0px;
+            }
+            .gellary strong, .gellary span {
+                padding: 1em;
+                display: block;
+            }
+            
+            img[src="images/moto.jpg"]+figcaption{
+                display: block;
+                padding: 1em;
+                width: 24%;
+                position: absolute;
+                left: 2%;
+                top: 5%;
+                background-color: rgba(140, 140, 140,.7);
+                border-radius: 10px;
+            }
+            img[src="images/moto.jpg"]+figcaption:hover{
+                background-color: rgba(140, 140, 140,1);
+                transition: background-color 0.3s ease-out 0s;
+            }
+                      
+            section, footer{
+                overflow: hidden;
+                padding-left: 20px;
+                padding-right: 20px;
+
+            }
+            
+            body section:first-of-type{
+                padding-left: 0px;
+                padding-right: 0px; 
+                padding-bottom: 0px;
+                padding-top: 0px;               
+            }
+                
+            .gellary{                
+                 background-color: lightgrey;          
+            }
+            
+            .gellary2{
+                background-color: paleturquoise;
+            }
+            footer{
+                background-color: lightcoral;
+                position: fixed;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+            }
+            .gellary figure, .gellary3 figure{
+                float: left;
+                width: 32%;
+            }
+            .gellary img{
+                transition:transform .75s ease-out;
+            }
+            
+            .gellary img:hover{
+                transform: scale(1.3);
+                z-index: 10;
+            }
+            
+            .gellary figcaption span{               
+                display: block;
+                background: gray;
+            }         
+            
+            .gellary2 img{
+                width: 49%;  
+                float: right;
+                margin-left: 3%;
+            }                   
+            .gellary2 figure{
+                background-image: linear-gradient(left,red 0%,red 49%, paleturquoise 49%, paleturquoise 100%);
+                background-image: -moz-linear-gradient(left,red 0%,red 49%, paleturquoise 49%, paleturquoise 100%);
+                overflow: hidden;
+            }
+           
+            .gellary3 figcaption{
+                font-size: small;
+            }
+            
+            footer figure{
+                width: 20%;
+                float: left;
+              
+            }
+
+            @keyframes logo {
+                0% {
+                    left: 0;
+                    transform: rotate(0);
+                }
+                50%{
+                    left: 800px;
+                    transform: rotate(360deg);
+                }
+                100% {
+                    left: 800px;
+                    transform: rotate(0) scale(2);
+                }
+            }
+            .logo{
+                width: 100px;
+                z-index: 10;
+                position: absolute;
+               -moz-animation: logo 3s;
+               -moz-animation-fill-mode: forwards;
+            }
+        </style>
+    </head>
+    <body>        
+        <header>
+            <img src="images/logo.png" alt="dsfds" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Полезное</a></li><li>
+                        <a href="#">Загрузки</a></li><li>
+                        <a href="#">Работа</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        
+        <section> 
+             <figure>
+                <img src="images/moto.jpg">
+                <figcaption>Повседневная практика показывает, что реализация намеченных плановых заданий позволяет оценить значение форм развития.</figcaption>
+            </figure>
+        </section>
+        
+        <section class="gellary">
+            <figure>
+                <img src="images/moto1.jpg">
+                <figcaption><strong>Идейныесоображения высшего порядка.</strong><span>Товарищи! укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</span> </figcaption>
+            </figure>   
+             <figure>
+                <img src="images/moto2.jpg">
+                <figcaption><strong>Идейныесоображения высшего порядка.</strong><span>Товарищи! укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</span> </figcaption>
+            </figure>   
+             <figure>
+                <img src="images/moto3.jpg">
+                <figcaption><strong>Идейныесоображения высшего порядка.</strong><span>Товарищи! укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</span> </figcaption>
+            </figure>   
+        </section>
+        
+        <section class="gellary2">
+            <h1>Заголовок секции</h1>
+            <figure>
+                <img src="images/moto4.jpg">
+                <figcaption>Повседневная практика показывает, что реализация намеченных плановых заданий позволяет оценить значение форм развития. Задача организации, в особенности же новая модель организационной деятельности влечет за собой процесс внедрения и модернизации модели развития.</figcaption>
+            </figure>
+        </section>
+        
+        <section class="gellary3">
+            <h1>Заголовок секции</h1>
+            <figure>
+                <img src="images/chel.jpeg">
+                <figcaption>Петя Петров, Москва</figcaption>
+            </figure>
+            <figure>
+                <img src="images/chel.jpeg">
+                <figcaption>Петя Петров, Москва</figcaption>
+            </figure>
+            <figure>
+                <img src="images/chel.jpeg">
+                <figcaption>Петя Петров, Москва</figcaption>
+            </figure>
+            <figure>
+                <img src="images/chel.jpeg">
+                <figcaption>Петя Петров, Москва</figcaption>
+            </figure>
+            <figure>
+                <img src="images/chel.jpeg">
+                <figcaption>Петя Петров, Москва</figcaption>
+            </figure>
+            <figure>
+                <img src="images/chel.jpeg">
+                <figcaption>Петя Петров, Москва</figcaption>
+            </figure>
+        </section>        
+                     
+        <footer>
+            <h1>Заголовок секции</h1>
+            <figure>                
+                <figcaption>Полезное</figcaption>                
+                <ul>
+                    <li><a href="#">Ссылка1</a></li>                        
+                    <li><a href="#">Ссылка2</a></li>
+                    <li><a href="#">Ссылка3</a></li>  
+                </ul>
+            </figure>
+            <figure>                
+                <figcaption>Для дома</figcaption>                
+                <ul>
+                    <li><a href="#">Ссылка1</a></li>                        
+                    <li><a href="#">Ссылка2</a></li>
+                    <li><a href="#">Ссылка3</a></li>  
+                </ul>
+            </figure>
+            <figure>                
+                <figcaption>На дачу</figcaption>                
+                <ul>
+                    <li><a href="#">Ссылка1</a></li>                        
+                    <li><a href="#">Ссылка2</a></li>
+                    <li><a href="#">Ссылка3</a></li>  
+                </ul>
+            </figure>
+             <figure>                
+                <figcaption>Что-то еще</figcaption>                
+                <ul>
+                    <li><a href="#">Ссылка1</a></li>                        
+                    <li><a href="#">Ссылка2</a></li>
+                    <li><a href="#">Ссылка3</a></li>  
+                </ul>
+            </figure>
+        </footer>    
+        
+    </body>
+</html>
